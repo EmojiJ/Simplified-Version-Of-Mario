@@ -22,8 +22,14 @@ GameWindow {
     screenWidth: 960
     screenHeight: 640
 
+
     GameScene {
         id: gameScene
+    }
+
+    FontLoader {
+        id:marioFont
+        source: "../assets/fonts/SuperMario256.ttf"
     }
 
     MenuScene {
@@ -46,8 +52,8 @@ GameWindow {
       name:"game"
       PropertyChanges {target: gameScene; opacity:1}
       PropertyChanges {target:gameWindow;activeScene:gameScene}
-      StateChangeScript {name:closeMenuMusic;script: audio.closeMenuBgm()}
-      StateChangeScript {name:openPlayMusic;script: audio.openPlayMusic()}
+      StateChangeScript {name:"menuBgm";script: audio.closeMenuBgm()}
+      StateChangeScript {name:"playMusic";script: audio.openPlayMusic()}
 
     }
   ]
