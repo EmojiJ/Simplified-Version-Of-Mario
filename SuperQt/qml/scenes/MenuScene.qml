@@ -1,7 +1,6 @@
-import Felgo 3.0
 import QtQuick 2.0
+import Felgo 3.0
 import "../common"
-
 
 SceneBase{
     id:menuScene
@@ -12,9 +11,10 @@ SceneBase{
 
 
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "#ccff99" }
-            GradientStop { position: 0.9; color: "#ccffcc" }
-            GradientStop { position: 1.0; color: "#ffffcc" }
+            GradientStop { position: 0.0; color: "#4595e6" }
+            GradientStop { position: 0.9; color: "#80bfff" }
+            GradientStop { position: 0.95; color: "#009900" }
+            GradientStop { position: 1.0; color: "#804c00" }
         }
 
     }
@@ -25,14 +25,14 @@ SceneBase{
         id:header
         height: 95
 
-        radius: 20
+        radius: height / 4
         anchors.top: menuScene.gameWindowAnchorItem.top
         anchors.left: menuScene.gameWindowAnchorItem.left
         anchors.right: menuScene.gameWindowAnchorItem.right
         anchors.margins: 5
 
-                //color: "#ffcccc"
-         color:"#ccffcc"
+        //        color: "#ffcccc"
+        color:"#cce6ff"
 
         MultiResolutionImage {
             fillMode: Image.PreserveAspectFit
@@ -57,11 +57,12 @@ SceneBase{
 
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: header.bottom
-        anchors.topMargin: 70
+        anchors.topMargin: 40
+        color: "#cce6ff"
+   //     initColor:"#cce6ff"
+     //   lastColor:"#cce6ff"
 
-        initColor:"#ffffcc"
-        lastColor:"#ffff99"
-
+        radius: height / 4
         borderColor: "transparent"
 
         MouseArea{
@@ -70,11 +71,13 @@ SceneBase{
                 audio.playSound("click")
                 gameWindow.state = "game"
                 gameScene.gameRunning = true
-
+                gameScene.level1Visible = true
+                gameScene.level2Visible = false
             }
         }
 
 
     }
-}
 
+
+}
