@@ -30,7 +30,7 @@ GameButton{
 
           GradientStop { position: 0.0; color: imageButton.color }
 
-          //tint color,to make it a little darker and use it as second color
+          //tint color 让背景更暗一点儿
           GradientStop { position: 1.0; color: Qt.tint(imageButton.color,"#24000000")}
         }
       }
@@ -45,7 +45,8 @@ GameButton{
 
       //设定图片显示模式,有如下可选值
       // 1.Image.Stretch –图片自适应
-      //2.Image.PreserveAspectFit –图片均匀缩放,不需要裁剪 3.Image.PreserveAspectCrop –图片自动裁剪
+      //2.Image.PreserveAspectFit –图片均匀缩放,不需要裁剪
+      //3.Image.PreserveAspectCrop –图片自动裁剪
       //4.Image.Tile –图片是水平和垂直方向复制的
       //5.Image.TileVertically –图片是水平方向复制的
       //6.Image.TileHorizontally –图片是垂直方向复制的
