@@ -6,54 +6,54 @@ Item {
 
     BackgroundMusic {
         id:menuBgm
-        source: ""
+        source: "../../assets/audio/music/menuMusic.mp3"
         autoPlay:true
     }
 
     BackgroundMusic {
         id:playMusic
         autoPlay: false
-        source: ""
+        source: "../../assets/audio/music/playMusic.mp3"
     }
 
     SoundEffect {
-        id: plaerJump
-        source: ""
+        id: playerJump
+        source: "../../assets/audio/sounds/phaseJump1.wav"
     }
 
     SoundEffect {
         id:collectCoin
-        source: ""
+        source: "../../assets/audio/sounds/coin_3.wav"
     }
 
     SoundEffect {
         id:click
-        source: ""
+        source: "../../assets/audio/sounds/click1.wav"
     }
 
     SoundEffect {
       id: finish
-      source: ""
+      source: "../../assets/audio/sounds/coin_3.wav"
     }
 
     SoundEffect {
       id: playerHit
-      source: ""
+      source: "../../assets/audio/sounds/whizz.wav"
     }
 
     SoundEffect {
       id: collectMushroom
-      source: ""
+      source: "../../assets/audio/sounds/zapThreeToneUp.wav"
     }
 
     SoundEffect {
       id: opponentJumperDie
-      source: ""
+      source: "../../assets/audio/sounds/twitch.wav"
     }
 
     SoundEffect {
       id: playerDie
-      source: ""
+      source: "../../assets/audio/sounds/lose.wav"
     }
 
     function closeMenuBgm()
