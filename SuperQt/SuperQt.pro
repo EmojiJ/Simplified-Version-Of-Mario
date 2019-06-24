@@ -64,4 +64,21 @@ DISTFILES += \
     qml/common/SceneBase.qml \
     qml/common/ImageButton.qml \
     qml/common/AudioManage.qml \
-    qml/scenes/GameScene.qml
+    qml/scenes/GameScene.qml \
+    qml/entities/Ground.qml \
+    qml/entities/TiledEntityBase.qml \
+    qml/entities/Coin.qml \
+    qml/entities/Tile.qml \
+    qml/entities/BlockEnemy.qml \
+    qml/entities/Platform.qml \
+    qml/entities/Player.qml \
+    qml/entities/ResetSensor.qml \
+    qml/entities/OtherEnemy.qml \
+    qml/entities/Mushroom.qml \
+    qml/levels/Level1.qml \
+    qml/levels/LevelBase.qml \
+    qml/levels/Levels2.qml \
+    qml/entities/Finish.qml \
+    qml/gameElements/JumpTouchButton.qml \
+    qml/gameElements/MoveTouchButton.qml
+
