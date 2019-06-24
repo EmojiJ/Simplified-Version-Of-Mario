@@ -10,7 +10,6 @@ EntityBase {
 
     property bool collected: false
 
-    // when the coin is collected, it shouldn't be visible anymore
 
     MultiResolutionImage{
         id:image
@@ -37,7 +36,6 @@ EntityBase {
         audio.playSound("collectCoin")
     }
 
-    // reset coin
     function reset() {
       coin.collected = false
     }

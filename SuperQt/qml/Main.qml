@@ -47,6 +47,8 @@ GameWindow {
       name: "menu"
       PropertyChanges {target: menuScene; opacity: 1}
       PropertyChanges {target: gameWindow; activeScene: menuScene}
+      StateChangeScript{name:"menuBgm";script: audio.openMenuBgm()}
+      StateChangeScript{name:"playMusic";script: audio.closePlayMusic()}
     },
     State {
       name:"game"

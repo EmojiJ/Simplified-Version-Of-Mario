@@ -42,7 +42,7 @@ EntityBase {
                 }
                 else
                 {
-                    player.isBig = true
+                    player.isBig = false
                     audio.playSound("opponentJumperDie")
                     player.resetImageAnchor()
                 }

@@ -19,9 +19,9 @@ EntityBase {
     collisionTestingOnlyMode: true
     fixture.onBeginContact: {
       var otherEntity = other.getBody().target
-      // if the player hits the sensor, we emit a signal which will be used to reset the player
+
       if(otherEntity.entityType === "player") {
-        // we could also directly modify the player position here, but the signal approach is a bit cleaner and helps separating the components
+
         resetSensor.contact()
           audio.playSound("playerDie")
       }
