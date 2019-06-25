@@ -37,7 +37,7 @@ SceneBase{
         anchors.horizontalCenter: gameScene.gameWindowAnchorItem.horizontalCenter
         // 设置和player相同速度
         movementVelocity: player.x > offsetBeforeScrollingStarts ? Qt.point(-player.horizontalVelocity,0) : Qt.point(0,0)
-        // 和比率想乘产生视觉差
+        // 和比率相乘产生视觉差
         ratio: Qt.point(0.3,0)
     }
     ParallaxScrollingBackground {
@@ -99,6 +99,8 @@ SceneBase{
                 gameRunning = false
                 audio.closePlayMusic()
                 infoRec.visible = true
+                moveTouchButton.deleteMoveButton()
+                jumpTouchButton.deleteJumpButton()
             }
 
 
@@ -110,6 +112,22 @@ SceneBase{
             }
         }
     }
+
+    MoveTouchButton {
+      id: moveTouchButton
+
+      // pass TwoAxisController to moveTouchButton
+      controller: controller
+    }
+
+
+    JumpTouchButton {
+      id: jumpTouchButton
+
+      onPressed: player.jump(true)
+      onReleased: player.endJump()
+    }
+
     Timer{
         id: gameTimer
         running: gameRunning
@@ -122,6 +140,10 @@ SceneBase{
                 gameRunning = false
                 audio.closePlayMusic()
                 infoRec.visible = true
+
+
+                moveTouchButton.deleteMoveButton()
+                jumpTouchButton.deleteJumpButton()
 
             }
         }
@@ -141,6 +163,8 @@ SceneBase{
     Rectangle{
         id:infoRec
         visible: false
+
+
         width: 380
         height: 250
         z:10
@@ -184,6 +208,12 @@ SceneBase{
                                    onClicked: {
 
 
+                                       jumpTouchButton.addJumpButton()
+                                       moveTouchButton.addMoveButton()
+                                       //jumpTouchButton.visible = true
+                                       //jumpTouchButton.enabled = true
+                                       //moveTouchButton.visible= true
+                                      // moveTouchButton.enabled =true
                                        audio.playSound("click")
                                        infoRec.visible = false
 
@@ -250,6 +280,8 @@ SceneBase{
                    onClicked: {
                        audio.playSound("click")
                        infoRec.visible = false
+                       jumpTouchButton.addJumpButton()
+                       moveTouchButton.addMoveButton()
                        //                        gameRunning = true
                        player.x = 20
                        player.y = 100
@@ -389,7 +421,10 @@ SceneBase{
                    onClicked: {
                        audio.playSound("click")
                        levelFlag = 1
+                       moveTouchButton.addMoveButton()
+                       jumpTouchButton.addJumpButton()
                        passRec.visible = false
+                       player.isBig = false
                        gameRunning = true
                        level2.resetBlock()
                        level2.setMushroomVisible()
@@ -435,6 +470,8 @@ SceneBase{
                    onClicked: {
                        audio.playSound("click")
                        passRec.visible = false
+                       moveTouchButton.addMoveButton()
+                       jumpTouchButton.addJumpButton()
                        //                        gameRunning = true
                        player.x = 20
                        player.y = 100
@@ -516,20 +553,7 @@ SceneBase{
         */
     }
 
-    MoveTouchButton {
-      id: moveTouchButton
 
-      // pass TwoAxisController to moveTouchButton
-      controller: controller
-    }
-
-
-    JumpTouchButton {
-      id: jumpTouchButton
-
-      onPressed: player.jump(true)
-      onReleased: player.endJump()
-    }
 
 
     Keys.forwardTo: controller

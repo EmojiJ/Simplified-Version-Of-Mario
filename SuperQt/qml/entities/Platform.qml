@@ -29,6 +29,7 @@ TiledEntityBase {
   BoxCollider {
     id: collider
     anchors.fill: parent
+
     bodyType: Body.Static
 
     fixture.onBeginContact: {
@@ -37,6 +38,7 @@ TiledEntityBase {
         console.debug("contact platform begin")
 
         player.contacts++
+
       }
     }
 
@@ -47,6 +49,7 @@ TiledEntityBase {
 
         // if the player leaves a platform, we decrease its number of active contacts
         player.contacts--
+
       }
     }
   }

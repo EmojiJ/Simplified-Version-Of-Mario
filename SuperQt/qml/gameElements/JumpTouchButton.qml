@@ -64,4 +64,18 @@ Item {
       background.visible = false
     }
   }
+  function deleteJumpButton()
+  {
+      jumpTouchButton.released()
+     // player.endJump()
+      background.visible = false
+      jumpTouchButton.visible = false
+
+  }
+  function addJumpButton()
+  {
+
+      !system.desktopPlatform ?jumpTouchButton.visible=true:jumpTouchButton.visible=false
+      jumpTouchButton.enabled =true
+  }
 }

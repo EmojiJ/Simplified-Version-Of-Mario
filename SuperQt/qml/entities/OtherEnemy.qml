@@ -34,6 +34,8 @@ EntityBase {
                     audio.playSound("playerDie")
 
                     gameScene.dieRec = true
+                    jumpTouchButton.deleteJumpButton()
+                    moveTouchButton.deleteMoveButton()
                 }
                 else {
                     player.isBig = false

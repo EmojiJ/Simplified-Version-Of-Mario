@@ -34,7 +34,7 @@ EntityBase {
         id: image
         anchors.bottom: player.bottom
 
-        anchors.bottomMargin: -9
+        anchors.bottomMargin: isBig? -10 : -14
         source: "../../assets/player/run.png"
 
     }

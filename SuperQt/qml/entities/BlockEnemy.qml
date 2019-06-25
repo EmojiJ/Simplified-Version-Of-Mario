@@ -5,8 +5,8 @@ import Felgo 3.0
 EntityBase {
     id: blockEnemy
     entityType: "blockEnemy"
-    width: 25
-    height: 25
+    width: 32
+    height: 32
     visible: visb ? true : false
 
     property bool alive: true
@@ -39,6 +39,8 @@ EntityBase {
                     //player.visible = false
                     audio.playSound("playerDie")
                     dieRec = true
+                    moveTouchButton.deleteMoveButton()
+                    jumpTouchButton.deleteJumpButton()
                 }
                 else
                 {
@@ -54,7 +56,7 @@ EntityBase {
 
     BoxCollider {
         id:blockTopCollider
-        width: blockImage.width - 3
+        width: blockImage.width -3
         height: 1
 
         active: true

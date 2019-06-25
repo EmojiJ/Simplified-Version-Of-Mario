@@ -2,6 +2,7 @@ import Felgo 3.0
 import QtQuick 2.0
 
 Item {
+    id:moveTouchButton
   // 只能visible在触控环境下和非menu状态下
   visible: !system.desktopPlatform && gameScene.state !== "menu"
   enabled: visible
@@ -104,5 +105,16 @@ Item {
       backgroundLeft.visible = false
       backgroundRight.visible = false
     }
+  }
+  function deleteMoveButton() {
+       moveTouchButton.visible=false
+      controller.xAxis = 0
+      backgroundLeft.visible = false
+      backgroundRight.visible = false
+
+}
+  function addMoveButton() {
+      !system.desktopPlatform ? moveTouchButton.visible = true : moveTouchButton.visible = false
+      moveTouchButton.enabled = true
   }
 }

@@ -24,6 +24,8 @@ EntityBase{
             var otherEntity = other.getBody().target
             if(otherEntity.entityType === "player"){
                 gameScene.pass = true
+                moveTouchButton.deleteMoveButton()
+                jumpTouchButton.deleteJumpButton()
                 audio.playSound("finish")
                 gameRunning = false
             }
